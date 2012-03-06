@@ -1,0 +1,5 @@
+name: MCNSACapes
+main: com.mcnsa.mcnsacapes.MCNSACapes
+version: 1.0.0
+author: FuzzyWuzzie
+depend: [PermissionsEx]
