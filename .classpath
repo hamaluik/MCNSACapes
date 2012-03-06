@@ -2,5 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre6"/>
+	<classpathentry kind="lib" path="C:/Users/Kenton/Programming/Java/MCNSACapes/lib/bukkit.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kenton/Programming/Java/MCNSACapes/lib/PermissionsEx.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
