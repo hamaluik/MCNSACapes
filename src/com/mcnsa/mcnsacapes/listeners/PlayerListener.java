@@ -20,12 +20,24 @@ public class PlayerListener implements Listener {
 	@EventHandler(priority = EventPriority.LOWEST)
 	public void joinHandler(PlayerJoinEvent event) {
 		// see if they have a default cape
-		for(int i = 0; i < plugin.configManager.options.defaultCapeRanks.size(); i++) {
+		/*for(int i = 0; i < plugin.configManager.options.defaultCapeRanks.size(); i++) {
 			// see if their rank matches this one
 			if(plugin.permissions.getUser(event.getPlayer()).inGroup(plugin.configManager.options.defaultCapeRanks.get(i))) {
 				// they have a default cape, set it!
 				plugin.playerManager.setPlayerCape(event.getPlayer(), plugin.configManager.options.defaultCapeRanks.get(i).toLowerCase());
 			}
+		}*/
+		// see if they have perms for a custom cape
+		if(plugin.hasPermission(event.getPlayer(), "custom")) {
+			plugin.playerManager.setPlayerCape(event.getPlayer(), event.getPlayer().getName().toLowerCase());
+		}
+		// see if they have perms for a mod cape
+		else if(plugin.hasPermission(event.getPlayer(), "mod")) {
+			plugin.playerManager.setPlayerCape(event.getPlayer(), "mod");
+		}
+		// see if they have perms for a donor cape
+		else if(plugin.hasPermission(event.getPlayer(), "donor")) {
+			plugin.playerManager.setPlayerCape(event.getPlayer(), "donor");
 		}
 	}
 	

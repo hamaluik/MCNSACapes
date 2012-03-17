@@ -1,6 +1,6 @@
 package com.mcnsa.mcnsacapes.managers;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -20,7 +20,7 @@ public class ConfigManager {
 		//plugin.debug("loading options...");
 		
 		options.capeServer = config.getString("cape-server", "http://hamaluik.com/capes/");
-		options.defaultCapeRanks = (ArrayList<String>)config.getStringList("default-cape-ranks");
+		//options.defaultCapeRanks = (ArrayList<String>)config.getStringList("default-cape-ranks");
 		
 		// successful
 		return true;
@@ -29,6 +29,6 @@ public class ConfigManager {
 	// create a "class" in here to store config options!
 	public class ConfigOptions {
 		public String capeServer = new String("http://hamaluik.com/capes/");
-		public ArrayList<String> defaultCapeRanks = new ArrayList<String>();
+		//public ArrayList<String> defaultCapeRanks = new ArrayList<String>();
 	}
 }

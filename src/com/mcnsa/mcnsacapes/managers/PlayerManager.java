@@ -15,17 +15,25 @@ public class PlayerManager {
 	
 	public PlayerManager(MCNSACapes instance) {
 		plugin = instance;
+		
+		// now handle reloads
+		Player[] onlinePlayers = plugin.getServer().getOnlinePlayers();
+		for(int i = 0; i < onlinePlayers.length; i++) {
+			// send them the super-secret reload command
+			ColourHandler.sendMessage(onlinePlayers[i], "&4 &c &2 &a &0 ");
+		}
 	}
 	
 	public void setPlayerCape(Player player, String cape) {
 		capeMappings.put(player, cape);
-		sendUpdatesToPlayersWithMod();
+		sendSingleUpdateToPlayersWithMod(player);
+		//sendUpdatesToPlayersWithMod();
 	}
 	
 	public void removePlayerCape(Player player) {
 		if(capeMappings.containsKey(player)) {
 			capeMappings.remove(player);
-			sendUpdatesToPlayersWithMod();
+			sendSingleUpdateToPlayersWithMod(player);
 		}
 	}
 	
@@ -35,6 +43,18 @@ public class PlayerManager {
 		}
 		else if(!has && playersWithMod.contains(player)) {
 			playersWithMod.remove(player);
+		}
+	}
+	
+	public void sendSingleUpdateToPlayerWithMod(Player player, Player capeWearer) {
+		if(capeMappings.containsKey(capeWearer)) {
+			ColourHandler.sendMessage(player, "&4 &c &2 &a setcape:" + capeWearer.getName() + ":" + capeMappings.get(capeWearer));
+		}
+	}
+	
+	public void sendSingleUpdateToPlayersWithMod(Player capeWearer) {
+		for(int i = 0; i < playersWithMod.size(); i++) {
+			sendSingleUpdateToPlayerWithMod(playersWithMod.get(i), capeWearer);
 		}
 	}
 	
