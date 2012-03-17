@@ -27,13 +27,22 @@ public class PlayerManager {
 	public void setPlayerCape(Player player, String cape) {
 		capeMappings.put(player, cape);
 		sendSingleUpdateToPlayersWithMod(player);
-		//sendUpdatesToPlayersWithMod();
+	}
+	
+	public void setPlayerCapeNoUpdate(Player player, String cape) {
+		capeMappings.put(player, cape);
 	}
 	
 	public void removePlayerCape(Player player) {
 		if(capeMappings.containsKey(player)) {
 			capeMappings.remove(player);
 			sendSingleUpdateToPlayersWithMod(player);
+		}
+	}
+	
+	public void removePlayerCapeNoUpdate(Player player) {
+		if(capeMappings.containsKey(player)) {
+			capeMappings.remove(player);
 		}
 	}
 	

@@ -39,6 +39,9 @@ public class PlayerListener implements Listener {
 		else if(plugin.hasPermission(event.getPlayer(), "donor")) {
 			plugin.playerManager.setPlayerCape(event.getPlayer(), "donor");
 		}
+		else {
+			plugin.playerManager.removePlayerCape(event.getPlayer());
+		}
 	}
 	
 	// handle quits
