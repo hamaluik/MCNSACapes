@@ -19,7 +19,7 @@ public class ConfigManager {
 		// load the chat radius
 		//plugin.debug("loading options...");
 		
-		options.capeServer = config.getString("cape-server", "http://hamaluik.com/capes/");
+		options.capeServer = config.getString("cape-server", "http://capes.mcnsa.com");
 		//options.defaultCapeRanks = (ArrayList<String>)config.getStringList("default-cape-ranks");
 		
 		// successful
@@ -28,7 +28,7 @@ public class ConfigManager {
 
 	// create a "class" in here to store config options!
 	public class ConfigOptions {
-		public String capeServer = new String("http://hamaluik.com/capes/");
+		public String capeServer = new String("http://capes.mcnsa.com");
 		//public ArrayList<String> defaultCapeRanks = new ArrayList<String>();
 	}
 }
