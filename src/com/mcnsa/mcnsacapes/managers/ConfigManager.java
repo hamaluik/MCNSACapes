@@ -16,10 +16,9 @@ public class ConfigManager {
 
 	// load the configuration
 	public Boolean load(FileConfiguration config) {
-		// load the chat radius
 		//plugin.debug("loading options...");
 		
-		options.capeServer = config.getString("cape-server", "http://capes.mcnsa.com");
+		options.capeServer = config.getString("cape-server", "http://mcnsa.com/capes/");
 		//options.defaultCapeRanks = (ArrayList<String>)config.getStringList("default-cape-ranks");
 		
 		// successful
@@ -28,7 +27,7 @@ public class ConfigManager {
 
 	// create a "class" in here to store config options!
 	public class ConfigOptions {
-		public String capeServer = new String("http://capes.mcnsa.com");
+		public String capeServer = new String("http://mcnsa.com/capes/");
 		//public ArrayList<String> defaultCapeRanks = new ArrayList<String>();
 	}
 }
