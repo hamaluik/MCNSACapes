@@ -20,7 +20,7 @@ public class PlayerManager {
 		Player[] onlinePlayers = plugin.getServer().getOnlinePlayers();
 		for(int i = 0; i < onlinePlayers.length; i++) {
 			// send them the super-secret reload command
-			ColourHandler.sendMessage(onlinePlayers[i], "&4 &c &2 &a &0 ");
+			ColourHandler.sendMessage(onlinePlayers[i], "!#%");
 		}
 	}
 	
@@ -57,7 +57,7 @@ public class PlayerManager {
 	
 	public void sendSingleUpdateToPlayerWithMod(Player player, Player capeWearer) {
 		if(capeMappings.containsKey(capeWearer)) {
-			ColourHandler.sendMessage(player, "&4 &c &2 &a setcape:" + capeWearer.getName() + ":" + capeMappings.get(capeWearer));
+			ColourHandler.sendMessage(player, "!#%setcape:" + capeWearer.getName() + ":" + capeMappings.get(capeWearer));
 		}
 	}
 	
@@ -68,9 +68,9 @@ public class PlayerManager {
 	}
 	
 	public void sendUpdatesToPlayerWithMod(Player player) {
-		ColourHandler.sendMessage(player, "&4 &c &2 &a capeserver:" + plugin.configManager.options.capeServer);
+		ColourHandler.sendMessage(player, "!#%capeserver:" + plugin.configManager.options.capeServer);
 		for(Player capeWearer: capeMappings.keySet()) {
-			ColourHandler.sendMessage(player, "&4 &c &2 &a setcape:" + capeWearer.getName() + ":" + capeMappings.get(capeWearer));
+			ColourHandler.sendMessage(player, "!#%setcape:" + capeWearer.getName() + ":" + capeMappings.get(capeWearer));
 		}
 	}
 	
